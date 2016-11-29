@@ -1,3 +1,7 @@
+def extras
+
+end
+
 def compiler
 	puts "Welcome to the hotsheet code compiler!"
 	puts "Please enter the building or development name:"
@@ -10,11 +14,12 @@ def compiler
 	puts "#{name} - #{address} - #{city}"
 	puts "Do you need to add anymore information?"
 	answer = gets.chomp
+	answer = answer.downcase
 	if answer == "yes"
 		puts "Please choose which info you need to add:"
 		info = gets.chomp
 	else
-		puts "\[showcaseidx_custom_name = \"#{name}\" restrict=\'address = \"#{address}\"\'\] "
+		puts "\[showcaseidx_custom name = \"#{name}\" restrict=\'address = \"#{address}\"\'\] "
 		puts "EQ_city=#{city}, FL"
 		puts "EQ_num_bedrooms=0"
 		puts "EQ_num_full_bathrooms=0"
